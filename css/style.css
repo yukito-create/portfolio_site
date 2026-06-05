@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+body {
+    font-size: 16px;
+}
+
+img {
+    width: 100%;
+}
+
+/* インナー */
+.container {
+    max-width: 1100px;
+    width: 90%;
+    margin: 150px auto;
+}
+
+/* フレックスボックス */
+.model-flex {
+    display: flex;
+    justify-content: space-between;
+
+    &.flex-reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+/* セクション見出し */
+.sub-ttl {
+    margin-bottom: 75px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+
+    &::after {
+        content: "";
+        width: 40px;
+        height: 2px;
+        margin: 15px auto 0;
+        background-color: #333;
+        display: block;
+    }
+}
+
+/* メインビジュアル */
+.mainvisual {
+    width: 100%;
+    height: 100vh;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        user-select: none;
+    }
+}
+
+/* Webに興味を持ったきっかけ */
+.start-txt {
+    padding: 25px 50px 30px 75px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    position: relative;
+
+    h3 {
+        padding-bottom: 10px;
+        padding-right: 14px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: -2px;
+        transform: translateY(-50%);
+    }
+
+    p {
+        margin: 25px 0;
+        display: flex;
+        gap: 10px;
+
+        .bi-check2-square::before {
+            font-size: 1.2rem;
+            font-weight: bold !important;
+        }
+    }
+}
+
+/* 学習内容 */
+.study-cont {
+    margin-bottom: 100px;
+    gap: 50px;
+    align-items: center;
+
+    .study-txt {
+        width: 50%;
+
+        h3 {
+            margin-bottom: 35px;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+            span {
+                font-size: 1rem;
+                font-weight: 500;
+                display: block;
+            }
+        }
+
+        p:first-of-type {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        p:last-of-type {
+            text-align: justify;
+            line-height: 1.7;
+            letter-spacing: 0.05em;
+        }
+    }
+
+    .study-img {
+        width: 50%;
+    }
+}
+
+.study-cont:nth-of-type(2n) {
+
+    h3,
+    p:first-of-type {
+        text-align: right;
+    }
+}
+
+/* 制作の経験について */
+#skill .container {
+    max-width: 900px;
+}
+
+.skill-cont {
+    padding: 50px 0;
+    border-top: 1px solid #333;
+    justify-content: flex-start;
+    gap: 45px;
+
+    &:last-child {
+        border-bottom: 1px solid #333;
+    }
+
+    p:first-child {
+        width: 20%;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    p:last-child {
+        width: 80%;
+
+        span {
+            margin-bottom: 4px;
+            display: block;
+        }
+    }
+}
+
+/* 制作の流れ */
+.flow-cont {
+    margin-bottom: 100px;
+
+    h3 {
+        margin-bottom: 35px;
+        padding-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        border-bottom: 1px solid #333;
+    }
+
+    .flow-step {
+        margin-bottom: 50px;
+        align-items: center;
+        gap: 45px;
+
+        img {
+            width: 30%;
+        }
+
+        div {
+            width: 70%;
+
+            p:first-of-type {
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
