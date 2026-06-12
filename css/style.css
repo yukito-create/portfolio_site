@@ -140,31 +140,6 @@ img {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 学習内容 */
 .study-cont {
     margin-bottom: 100px;
@@ -254,6 +229,16 @@ img {
         margin-bottom: 35px;
         font-size: 1.4rem;
         font-weight: 600;
+        line-height: 1.25;
+
+        .bi-square-fill {
+            margin-right: 4px;
+            vertical-align: text-top;
+            
+            &::before {
+                font-size: 1.1rem;
+            }
+        }
     }
 
     .flow-step {
