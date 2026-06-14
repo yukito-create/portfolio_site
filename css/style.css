@@ -17,8 +17,8 @@ body {
     background: var(--dark-bg-color);
 }
 
-img {
-    width: 100%;
+img, video {
+    max-width: 100%;
     border-radius: 8px;
 }
 
@@ -44,7 +44,7 @@ img {
 .model-bg {
     color: var(--light-color);
     background-color: #fff;
-    margin: 0 12px;
+    margin: 0 15px;
     border-radius: 8px;
 }
 
@@ -94,23 +94,79 @@ img {
 .mainvisual {
     width: 100%;
     height: 100vh;
-    font-size: 80px;
-    font-weight: 600;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 100px;
+    position: relative;
 
-    span {
+    .header-logo {
+        width: 35px;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        
+        img {
+            border-radius: 0;
+        }
+    }
+
+    .mv-cont {
+        width: 55%;
+        height: calc(100vh - 30px);
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+    }
+
+    p {
+        font-size: 14rem;
+        font-weight: 800;
+        line-height: 0.9;
+        position: absolute;
+        bottom: 45px;
+        left: 25px;
         user-select: none;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Webに興味を持ったきっかけ */
 .start-txt {
     margin: 50px 0;
     padding: 85px 25px 45px;
-    border: 1px solid var(--dark-bg-color);
+    border: 2px solid var(--dark-bg-color);
     border-radius: 8px;
     position: relative;
 
@@ -234,7 +290,7 @@ img {
         .bi-square-fill {
             margin-right: 4px;
             vertical-align: text-top;
-            
+
             &::before {
                 font-size: 1.1rem;
             }
