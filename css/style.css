@@ -120,7 +120,6 @@ img, video {
             height: 100%;
             object-fit: cover;
         }
-    
     }
 
     p {
@@ -133,34 +132,6 @@ img, video {
         user-select: none;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Webに興味を持ったきっかけ */
 .start-txt {
