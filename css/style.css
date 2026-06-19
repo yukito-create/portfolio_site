@@ -105,6 +105,20 @@ video {
     }
 }
 
+.circle {
+    margin-right: 4px;
+
+    &.type-orange {
+        color: rgba(241,151,83,1);
+    }
+    &.type-blue {
+        color: rgba(68,176,176, 1);
+    }
+    &.type-green {
+        color: rgba(84, 172, 109, 1);
+    }
+}
+
 @media screen and (max-width: 500px) {
     .sub-ttl-left {
         margin-bottom: 50px;
@@ -167,7 +181,7 @@ video {
         position: absolute;
         bottom: 45px;
         left: 50px;
-        /* user-select: none; */
+        user-select: none;
 
         span {
             font-size: 10.3vw;
@@ -184,7 +198,7 @@ video {
             width: 100%;
             height: 100vh;
             position: static;
-
+            
             video {
                 border-radius: 0;
             }
@@ -194,9 +208,10 @@ video {
             font-size: 6rem;
             top: 50%;
             bottom: auto;
-            left: 15px;
+            left: auto;
+            right: 15px;
             transform: translateY(-50%);
-
+            
             span {
                 font-size: 4.5rem;
             }
@@ -204,36 +219,50 @@ video {
     }
 }
 
-/* Webに興味を持ったきっかけ */
+/* Webとの出会い */
 .start-txt {
-    margin: 50px 0;
-    padding: 85px 25px 45px;
-    /* border: 1px solid var(--dark-bg-color); */
-    /* border-radius: 8px; */
-    position: relative;
+    display: flex;
+    /* align-items: center; */
 
-    h3 {
-        margin-bottom: 25px;
-        padding: 0 17px 10px 15px;
-        font-size: 5.5rem;
-        font-weight: 800;
-        text-align: center;
-        background-color: var(--light-bg-color);
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .sub-ttl-left {
+        width: 40%;
+        margin-bottom: 0;
+        transform: translateY(-1em);
+
+        &::after {
+            display: none;
+        }
     }
 
-    p {
-        width: 80%;
-        margin: 0 auto 25px;
-        font-size: 1.2rem;
-        font-weight: 600;
+    div {
+        width: 60%;
 
-        .bi-check2-square::before {
-            margin-right: 10px;
+        p {
+            margin-bottom: 50px;
             font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .start-txt {
+        flex-direction: column;
+        gap: 15px;
+
+        .sub-ttl-left,
+        div {
+            width: 100%;
+        }
+
+        div p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
         }
     }
 }
@@ -284,6 +313,7 @@ video {
 }
 
 .study-cont:nth-of-type(even) {
+
     h3,
     p:first-of-type {
         text-align: right;
@@ -312,6 +342,7 @@ video {
     }
 
     .study-cont:nth-of-type(2n) {
+
         h3,
         p:first-of-type {
             text-align: left;
@@ -324,82 +355,77 @@ video {
     }
 }
 
-    /* 制作の経験 */
-    #skill .container {
-        max-width: 900px;
+/* 制作の経験 */
+#skill .container {
+    max-width: 900px;
+}
+
+.skill-cont {
+    padding: 50px 0;
+    border-top: 1px solid #333;
+    justify-content: flex-start;
+    gap: 45px;
+
+    &:last-child {
+        border-bottom: 1px solid #333;
     }
 
-    .skill-cont {
-        padding: 50px 0;
-        border-top: 1px solid #333;
-        justify-content: flex-start;
+    p:first-child {
+        width: 20%;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    p:last-child {
+        width: 80%;
+
+        span {
+            margin-bottom: 4px;
+            display: block;
+        }
+    }
+}
+
+/* 制作の流れ */
+.flow-cont {
+    margin-bottom: 100px;
+
+    h3 {
+        margin-bottom: 35px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.25;
+
+        .bi-square-fill {
+            margin-right: 4px;
+            vertical-align: text-top;
+
+            &::before {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .flow-step {
+        margin-bottom: 50px;
+        align-items: center;
         gap: 45px;
 
-        &:last-child {
-            border-bottom: 1px solid #333;
+        img {
+            width: 30%;
         }
 
-        p:first-child {
-            width: 20%;
-            font-weight: 600;
-            text-align: center;
-        }
+        div {
+            width: 70%;
 
-        p:last-child {
-            width: 80%;
-
-            span {
-                margin-bottom: 4px;
-                display: block;
-            }
-        }
-    }
-
-    /* 制作の流れ */
-    .flow-cont {
-        margin-bottom: 100px;
-
-        h3 {
-            margin-bottom: 35px;
-            font-size: 1.4rem;
-            font-weight: 600;
-            line-height: 1.25;
-
-            .bi-square-fill {
-                margin-right: 4px;
-                vertical-align: text-top;
-
-                &::before {
-                    font-size: 1.1rem;
-                }
-            }
-        }
-
-        .flow-step {
-            margin-bottom: 50px;
-            align-items: center;
-            gap: 45px;
-
-            img {
-                width: 30%;
+            p:first-of-type {
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+                font-weight: 600;
             }
 
-            div {
-                width: 70%;
-
-                p:first-of-type {
-                    margin-bottom: 15px;
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                }
-
-                p:last-of-type {
-                    line-height: 1.6;
-                }
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
+            p:last-of-type {
+                line-height: 1.6;
             }
         }
 
@@ -407,3 +433,8 @@ video {
             margin-bottom: 0;
         }
     }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
