@@ -109,11 +109,13 @@ video {
     margin-right: 4px;
 
     &.type-orange {
-        color: rgba(241,151,83,1);
+        color: rgba(241, 151, 83, 1);
     }
+
     &.type-blue {
-        color: rgba(68,176,176, 1);
+        color: rgba(68, 176, 176, 1);
     }
+
     &.type-green {
         color: rgba(84, 172, 109, 1);
     }
@@ -198,7 +200,7 @@ video {
             width: 100%;
             height: 100vh;
             position: static;
-            
+
             video {
                 border-radius: 0;
             }
@@ -211,7 +213,7 @@ video {
             left: auto;
             right: 15px;
             transform: translateY(-50%);
-            
+
             span {
                 font-size: 4.5rem;
             }
@@ -221,8 +223,6 @@ video {
 
 /* Webとの出会い */
 .start-txt {
-    display: flex;
-    /* align-items: center; */
 
     .sub-ttl-left {
         width: 40%;
@@ -242,6 +242,7 @@ video {
             font-size: 1.4rem;
             font-weight: 600;
             line-height: 1.8;
+            text-align: justify;
         }
 
         p:last-of-type {
@@ -268,12 +269,28 @@ video {
 }
 
 /* 学習内容 */
-.study-cont {
+.learn-ttl {
+    display: flex;
+    flex-direction: column;
+
+    .link {
+        flex-grow: 1;
+        position: relative;
+
+        .button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+.learning-cont {
     margin-bottom: 100px;
     gap: 50px;
     align-items: center;
 
-    .study-txt {
+    .learning-txt {
         width: 55%;
 
         h3 {
@@ -301,18 +318,18 @@ video {
         }
     }
 
-    .study-img {
+    .learning-img {
         width: 45%;
     }
 }
 
-.study-cont:nth-of-type(odd) {
-    .study-img {
+.learning-cont:nth-of-type(odd) {
+    .learning-img {
         text-align: right;
     }
 }
 
-.study-cont:nth-of-type(even) {
+.learning-cont:nth-of-type(even) {
 
     h3,
     p:first-of-type {
@@ -320,28 +337,28 @@ video {
     }
 }
 
-.study-cont:last-of-type {
+.learning-cont:last-of-type {
     margin-bottom: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .study-cont {
+    .learning-cont {
         margin-bottom: 50px;
         gap: 15px;
 
-        .study-txt,
-        .study-img {
+        .learning-txt,
+        .learning-img {
             width: 100%;
         }
 
-        .study-txt {
+        .learning-txt {
             h3 {
                 margin-bottom: 20px;
             }
         }
     }
 
-    .study-cont:nth-of-type(2n) {
+    .learning-cont:nth-of-type(2n) {
 
         h3,
         p:first-of-type {
@@ -349,8 +366,8 @@ video {
         }
     }
 
-    .study-cont.model-flex,
-    .study-cont.model-flex.flex-reverse {
+    .learning-cont.model-flex,
+    .learning-cont.model-flex.flex-reverse {
         flex-direction: column-reverse;
     }
 }
@@ -416,9 +433,24 @@ video {
             width: 9%;
             font-size: 5rem;
             font-weight: 700;
-            /* opacity: 0.65; */
+            text-align: center;
+
+            /* position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 125px;
+                height: 125px;
+                background-color: rgba(255, 255, 255, 0.15);
+                border-radius: 4px;
+                position: absolute;
+                top: 0;
+                left: 35%;
+                z-index: -1;
+            } */
         }
-    
+
         .flow-step-inner {
             width: 91%;
             align-items: center;
@@ -426,22 +458,22 @@ video {
 
             div {
                 width: 70%;
-                
+
                 p:first-of-type {
                     margin-bottom: 15px;
                     font-size: 1.2rem;
                     font-weight: 600;
                 }
-                
+
                 p:last-of-type {
                     line-height: 1.6;
                 }
             }
-            
+
             &:last-of-type {
                 margin-bottom: 0;
             }
-    
+
             img {
                 width: 30%;
             }
@@ -477,7 +509,7 @@ video {
                 div {
                     width: 100%;
                 }
-        
+
                 img {
                     width: 100%;
                 }
