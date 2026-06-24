@@ -9,6 +9,7 @@
 
 html {
     font-size: 16px;
+    scroll-behavior: smooth
 }
 
 body {
@@ -86,6 +87,12 @@ video {
         margin-top: 50px;
         background-color: var(--dark-color);
         display: block;
+    }
+}
+
+.model-bg .sub-ttl-left {
+    &::after {
+        background-color: var(--light-color);
     }
 }
 
@@ -269,18 +276,38 @@ video {
 }
 
 /* 学習内容 */
+#learning .container {
+    padding-top: 50px;
+}
+
 .learn-ttl {
     display: flex;
     flex-direction: column;
 
-    .link {
+    .button-cont {
         flex-grow: 1;
         position: relative;
 
         .button {
+            width: 90px;
+            height: 90px;
+            padding-top: 30px;
+            border: 1px solid #fff;
+            border-radius: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
             position: absolute;
             bottom: 0;
-            right: 0;
+            left: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                color: #1a1a1a;
+                background-color: #fff;
+            }
         }
     }
 }
@@ -404,6 +431,10 @@ video {
 }
 
 /* 制作の流れ */
+#flow .container {
+    padding-bottom: 50px;
+}
+
 .flow-cont {
     margin-bottom: 100px;
 
@@ -413,15 +444,6 @@ video {
         font-weight: 600;
         line-height: 1.25;
         text-align: center;
-
-        /* .bi-square-fill {
-            margin-right: 4px;
-            vertical-align: text-top;
-
-            &::before {
-                font-size: 1.1rem;
-            }
-        } */
     }
 
     .flow-step {
@@ -434,27 +456,12 @@ video {
             font-size: 5rem;
             font-weight: 700;
             text-align: center;
-
-            /* position: relative;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 125px;
-                height: 125px;
-                background-color: rgba(255, 255, 255, 0.15);
-                border-radius: 4px;
-                position: absolute;
-                top: 0;
-                left: 35%;
-                z-index: -1;
-            } */
         }
 
         .flow-step-inner {
             width: 91%;
             align-items: center;
-            gap: 35px;
+            gap: 45px;
 
             div {
                 width: 70%;
