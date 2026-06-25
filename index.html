@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="https://use.typekit.net/cyw8dge.css">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -73,30 +77,72 @@
     </section>
 
     <!-- 制作の経験 -->
-    <section id="skill" class="model-bg">
-        <div class="container model-narrow">
-            <h2 class="sub-ttl-center">
-                <span class="sub-ttl-en">Work</span>
-                <span class="sub-ttl-ja">制作の経験</span>
-            </h2>
-            <div class="skill-cont model-flex">
-                <p>実務期間</p>
-                <p>2年</p>
+    <section id="work" class="model-bg">
+        <div class="container">
+            <div class="model-narrow">
+                <h2 class="sub-ttl-center">
+                    <span class="sub-ttl-en">Work</span>
+                    <span class="sub-ttl-ja">制作の経験</span>
+                </h2>
+                <div class="work-cont model-flex">
+                    <p>実務期間</p>
+                    <p>2年</p>
+                </div>
+                <div class="work-cont model-flex">
+                    <p>業務内容</p>
+                    <p>
+                        <span>・コーディング<br>
+                            　HTML / CSS / JavaScrpt</span><br>
+                        <span>・WordPress<br>
+                            　インストール / 初期セットアップ<br>　各種プラグインのインストール・設定</span><br>
+                        <span>・ノーコード制作<br>
+                            　Elementor</span><br>
+                        <span>・その他業務<br>
+                            　写真レタッチなど</span>
+                    </p>
+                </div>
             </div>
-            <div class="skill-cont model-flex">
-                <p>業務内容</p>
-                <p>
-                    <span>・コーディング<br>
-                        　HTML / CSS / JavaScrpt</span><br>
-                    <span>・WordPress<br>
-                        　インストール / 初期セットアップ<br>　各種プラグインのインストール・設定</span><br>
-                    <span>・ノーコード制作<br>
-                        　Elementor</span><br>
-                    <span>・その他業務<br>
-                        　写真レタッチなど</span>
-                </p>
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
+        <!-- / ハイブリッドスクロール_テスト   -->
+        <div class="container full-cont">
+            <div class="side-scroll-list-wrapper">
+                <ul class="side-scroll-list">
+                  <li class="side-scroll-item">
+                    <h3 class="work-ttl">Coding</h3>
+                  </li>
+                  <li class="side-scroll-item">
+                    <h3 class="work-ttl">Nocode</h3>
+                  </li>
+                  <li class="side-scroll-item"><h3 class="work-ttl">Others</h3></li>
+                </ul>
+              </div>
+        </div>
+        <!--   ハイブリッドスクロール_テスト / -->
     </section>
 
     <!-- 制作の流れ -->
@@ -316,6 +362,8 @@
             </div>
         </div>
     </section>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

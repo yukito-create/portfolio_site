@@ -40,9 +40,11 @@ video {
     margin: 0 auto;
     padding: 150px 0;
 
-    &.model-narrow {
-        max-width: 900px;
-    }
+}
+
+.model-narrow {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 500px) {
@@ -344,17 +346,15 @@ video {
 }
 
 /* 制作の経験 */
-/* #skill .container {
-    max-width: 900px;
-} */
-
-.skill-cont {
+.work-cont {
+    margin-bottom: 75px;
     padding: 50px 0;
     border-top: 1px solid #333;
     justify-content: flex-start;
     gap: 45px;
 
     &:last-child {
+        margin-bottom: 0;
         border-bottom: 1px solid #333;
     }
 
@@ -373,6 +373,70 @@ video {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ハイブリッドスクロール_テスト */
+#work .container.full-cont {
+    background-color: #f0f0f0;
+}
+
+.side-scroll-list-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    height: 85vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.side-scroll-list {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: flex;
+    gap: 0 60px;
+}
+
+.side-scroll-item {
+    width: 1100px;
+    height: calc(85vh - 60px);
+    padding: 50px;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.work-ttl {
+    padding-bottom: 25px;
+    font-size: 5.5rem;
+    font-weight: 800;
+    border-bottom: 1px solid #333;
+}
+
+.container.full-cont {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* 制作の流れ */
 #flow .container {
