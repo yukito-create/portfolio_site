@@ -266,6 +266,11 @@ video {
 }
 
 /* Webとの出会い */
+#start{
+    position:relative;
+    z-index:1;
+}
+
 .info-cont {
     gap: 10%;
 
@@ -317,6 +322,12 @@ video {
 }
 
 /* 学習経験について */
+#learn{
+    background-color: var(--dark-bg-color);
+    position:relative;
+    z-index:10;
+}
+
 .info-ttl {
     display: flex;
     flex-direction: column;

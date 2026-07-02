@@ -1,43 +1,30 @@
 'use strict';
 
-// スクロールスタック
-const sections = document.querySelectorAll("[data-section]");
+// ページ内リンク時のハッシュ削除
+document.addEventListener("DOMContentLoaded", () => {
+  // ページ内リンクを取得
+  const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
 
-sections.forEach((section) => {
-  const inner = section.querySelector("[data-section-inner]");
-
-  const setFixed = () => {
-    gsap.set(inner, {
-      position: "fixed",
-      bottom: 0,
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // スクロール完了後にURLのハッシュを削除
+      setTimeout(() => {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }, 10);
     });
-  };
-
-  const setAbsolute = () => {
-    gsap.set(inner, {
-      position: "absolute",
-      bottom: "auto",
-    });
-  };
-
-  ScrollTrigger.create({
-    trigger: section,
-    start: "bottom bottom",
-    onEnter: setFixed,
-    onEnterBack: setFixed,
-    onLeave: setAbsolute,
-    onLeaveBack: setAbsolute,
   });
 });
 
-
-
-
-
-
-
-
-
+// スクロールスタック
+ScrollTrigger.create({
+  trigger: "#start",
+  start: "top top",
+  endTrigger: "#learn",
+  end: "top top",
+  pin: true,
+  pinSpacing: false,
+  anticipatePin: 1,
+});
 
 // ハイブリッドスクロール
 const listWrapperEl = document.querySelector('.side-scroll-list-wrapper');
