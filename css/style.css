@@ -266,9 +266,9 @@ video {
 }
 
 /* Webとの出会い */
-#start{
-    position:relative;
-    z-index:1;
+#start {
+    position: relative;
+    z-index: 1;
 }
 
 .info-cont {
@@ -322,10 +322,10 @@ video {
 }
 
 /* 学習経験について */
-#learn{
+#learn {
     background-color: var(--dark-bg-color);
-    position:relative;
-    z-index:10;
+    position: relative;
+    z-index: 10;
 }
 
 .info-ttl {
@@ -439,6 +439,41 @@ video {
         margin-bottom: 25px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .container.side-scroll-cont {
+        padding-top: 15px;
+        padding-left: 0;
+        padding-right: 0;
+
+        .pin-spacer {
+            margin: 0 !important;
+
+            .side-scroll-list-wrapper {
+                width: 100%;
+
+                .side-scroll-list {
+                    left: 25px;
+                }
+
+                .side-scroll-item {
+                    padding: 25px;
+                    width: calc(100vw - 50px);
+                    flex-shrink: 0;
+
+                    .work-ttl {
+                        font-size: 4.5rem;
+                    }
+
+                    .work-list {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 /* 制作の流れ */
 #flow .container {
