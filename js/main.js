@@ -16,14 +16,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // スクロールスタック
-ScrollTrigger.create({
-  trigger: "#start",
-  start: "top top",
-  endTrigger: "#learn",
-  end: "top top",
-  pin: true,
-  pinSpacing: false,
-  anticipatePin: 1,
+// ScrollTrigger.create({
+//   trigger: "#start",
+//   start: "top top",
+//   endTrigger: "#learn",
+//   end: "top top",
+//   pin: true,
+//   pinSpacing: false,
+//   anticipatePin: 1,
+// });
+
+const sections = gsap.utils.toArray(".stack-section");
+
+sections.forEach((section, index) => {
+
+    // 最後のセクションは固定しない
+    if(index === sections.length - 1) return;
+
+    ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        endTrigger: sections[index + 1],
+        end: "top top",
+        pin: true,
+        pinSpacing: false,
+        anticipatePin: 1
+    });
+
 });
 
 // ハイブリッドスクロール

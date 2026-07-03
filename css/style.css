@@ -184,6 +184,11 @@ video {
     }
 }
 
+/* スクロールスタック */
+.stack-section {
+    position: relative;
+}
+
 /* メインビジュアル */
 .mainvisual {
     width: 100%;
@@ -267,7 +272,7 @@ video {
 
 /* Webとの出会い */
 #start {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
 }
 
@@ -324,8 +329,8 @@ video {
 /* 学習経験について */
 #learn {
     background-color: var(--dark-bg-color);
-    position: relative;
-    z-index: 10;
+    /* position: relative; */
+    z-index: 2;
 }
 
 .info-ttl {
@@ -368,6 +373,10 @@ video {
 }
 
 /* 制作の経験 */
+#work {
+    z-index: 3;
+}
+
 .work-cont {
     padding: 50px 0;
     border-top: 1px solid #333;
@@ -395,8 +404,18 @@ video {
     }
 }
 
-#work .model-full {
+/* 制作実績 */
+#projects {
+    z-index: 4;
+    color: var(--light-color);
+}
+
+#projects .model-full {
     background-color: #eee;
+}
+
+.container.side-scroll-cont {
+    padding-top: 90px;
 }
 
 .side-scroll-list-wrapper {
