@@ -412,6 +412,12 @@ video {
     }
 }
 
+@media screen and (max-width: 500px) {
+    #work {
+        height: 100svh;
+    }
+}
+
 /* 制作実績 */
 #projects {
     z-index: 4;
@@ -468,6 +474,10 @@ video {
 }
 
 @media screen and (max-width: 500px) {
+    #projects {
+        height: 100svh;
+    }
+
     .container.side-scroll-cont {
         padding-top: 15px;
         padding-left: 0;
