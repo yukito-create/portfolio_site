@@ -385,6 +385,11 @@ video {
     z-index: 3;
 }
 
+#work .container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
 .work-cont {
     padding: 50px 0;
     border-top: 1px solid #333;
@@ -409,12 +414,6 @@ video {
             margin-bottom: 4px;
             display: block;
         }
-    }
-}
-
-@media screen and (max-width: 500px) {
-    #work {
-        height: 100svh;
     }
 }
 
@@ -474,12 +473,8 @@ video {
 }
 
 @media screen and (max-width: 500px) {
-    #projects {
-        height: 100svh;
-    }
-
     .container.side-scroll-cont {
-        padding-top: 15px;
+        padding-top: 0;
         padding-left: 0;
         padding-right: 0;
 

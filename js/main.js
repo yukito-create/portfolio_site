@@ -16,16 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // スクロールスタック
-// ScrollTrigger.create({
-//   trigger: "#start",
-//   start: "top top",
-//   endTrigger: "#learn",
-//   end: "top top",
-//   pin: true,
-//   pinSpacing: false,
-//   anticipatePin: 1,
-// });
-
 const sections = gsap.utils.toArray(".stack-section");
 
 sections.forEach((section, index) => {
