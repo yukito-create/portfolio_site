@@ -310,6 +310,10 @@ video {
 }
 
 @media screen and (max-width: 500px) {
+    #start {
+        height: 100svh;
+    }
+
     .info-cont {
         flex-direction: column;
         gap: 15px;
@@ -359,6 +363,10 @@ video {
 }
 
 @media screen and (max-width: 500px) {
+    #learn {
+        height: 100svh;
+    }
+
     .info-ttl {
         .btn-cont-pc {
             display: none;
