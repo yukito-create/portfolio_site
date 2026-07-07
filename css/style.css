@@ -37,6 +37,7 @@ video {
 .container {
     max-width: 1100px;
     width: 90%;
+    height: 100%;
     margin: 0 auto;
     padding: 150px 0;
 
@@ -200,7 +201,7 @@ video {
     position: relative;
 }
 
-/* メインビジュアル */
+/* mainvisual */
 .mainvisual {
     width: 100%;
     height: 100svh;
@@ -288,7 +289,7 @@ video {
     }
 }
 
-/* Webとの出会い */
+/* start */
 #start {
     z-index: 1;
 }
@@ -347,7 +348,7 @@ video {
     }
 }
 
-/* 学習経験について */
+/* learn */
 #learn {
     background-color: var(--dark-bg-color);
     z-index: 2;
@@ -396,7 +397,7 @@ video {
     }
 }
 
-/* 制作の経験 */
+/* work */
 #work {
     z-index: 3;
 }
@@ -433,7 +434,7 @@ video {
     }
 }
 
-/* 制作実績 */
+/* projects */
 #projects {
     z-index: 4;
     color: var(--light-color);
@@ -516,8 +517,7 @@ video {
     }
 }
 
-
-/* 制作の流れ */
+/* flow */
 #flow .container {
     padding-bottom: 50px;
 }
@@ -627,7 +627,7 @@ video {
     }
 }
 
-/* 学習内容 */
+/* learning */
 #learning .container {
     padding-top: 50px;
 }
@@ -720,5 +720,36 @@ video {
     .learning-cont.model-flex,
     .learning-cont.model-flex.flex-reverse {
         flex-direction: column-reverse;
+    }
+}
+
+/* profile */
+#profile {
+    height: 100vh;
+    
+    .sub-ttl-center {
+        margin-bottom: 10px;
+        
+        .sub-ttl-en {
+            font-size: 4rem;
+        }
+    }
+    
+    .profile-cont {
+        text-align: center;
+    
+        .profile-name {
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        .profile-img {
+            width: 150px;
+            margin: 0 auto 25px;
+        }
+        .profile-txt {
+            margin: 0 auto;
+            font-weight: 600;
+            line-height: 2;
+        }
     }
 }
