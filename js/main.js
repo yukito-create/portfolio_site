@@ -36,16 +36,42 @@ sections.forEach((section, index) => {
 });
 
 // ハイブリッドスクロール
-const listWrapperEl = document.querySelector('.side-scroll-list-wrapper');
-const listEl = document.querySelector('.side-scroll-list');
+// const listWrapperEl = document.querySelector('.side-scroll-list-wrapper');
+// const listEl = document.querySelector('.side-scroll-list');
+
+// gsap.to(listEl, {
+//   x: () => -(listEl.clientWidth - listWrapperEl.clientWidth),
+//   ease: 'none',
+//   scrollTrigger: {
+//     trigger: listWrapperEl,
+//     start: 'top top',
+//     end: () => `+=${listEl.clientWidth - listWrapperEl.clientWidth}`,
+//     scrub: true,
+//     pin: true,
+//     anticipatePin: 1,
+//     invalidateOnRefresh: true,
+//   },
+// });
+
+const listWrapperEl = document.querySelector(".side-scroll-list-wrapper");
+const listEl = document.querySelector(".side-scroll-list");
 
 gsap.to(listEl, {
-  x: () => -(listEl.clientWidth - listWrapperEl.clientWidth),
-  ease: 'none',
+  x: () => {
+    const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
+    return -distance;
+  },
+  ease: "none",
   scrollTrigger: {
     trigger: listWrapperEl,
-    start: 'top top',
-    end: () => `+=${listEl.clientWidth - listWrapperEl.clientWidth}`,
+    start: "top top",
+    end: () => {
+      const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
+
+      return window.innerWidth <= 500
+        ? `+=${distance * 0.7}`
+        : `+=${distance}`;
+    },
     scrub: true,
     pin: true,
     anticipatePin: 1,
