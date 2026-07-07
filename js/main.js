@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
 // スクロールスタック
 const sections = gsap.utils.toArray(".stack-section");
 
@@ -32,8 +33,8 @@ sections.forEach((section, index) => {
         pinSpacing: false,
         anticipatePin: 1
     });
-
 });
+
 
 // ハイブリッドスクロール
 const listWrapperEl = document.querySelector(".side-scroll-list-wrapper");
@@ -60,4 +61,55 @@ gsap.to(listEl, {
     anticipatePin: 1,
     invalidateOnRefresh: true,
   },
+});
+
+
+// テキストアニメーション
+// gsap.utils.toArray(".js-ttl").forEach((title) => {
+//   gsap.from(title.querySelectorAll(":scope > span > span"), {
+//     yPercent: 100,
+//     opacity: 0,
+//     duration: 0.8,
+//     ease: "power3.out",
+//     stagger: 0.15,
+//     scrollTrigger: {
+//       trigger: title,
+//       start: "top 80%",
+//       toggleActions: "play none none none"
+//     }
+//   });
+// });
+
+gsap.utils.toArray(".js-ttl").forEach((title) => {
+
+  const chars = title.querySelectorAll(":scope > span > span");
+
+  gsap.from(chars, {
+    yPercent: 100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.05,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: title,
+      start: "top 80%"
+    },
+    onComplete: () => {
+      title.classList.add("is-animated");
+    }
+  });
+
+});
+
+
+// アンダーラインのアニメーション
+gsap.utils.toArray(".sub-ttl-left").forEach((title) => {
+  ScrollTrigger.create({
+    trigger: title,
+    start: "top 80%",
+    once: true,
+    onEnter: () => {
+      title.classList.add("is-active");
+    }
+  });
 });
