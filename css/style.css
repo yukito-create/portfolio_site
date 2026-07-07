@@ -492,6 +492,7 @@ video {
             width: calc(100vw - 41.5px);
 
             .work-ttl {
+                margin-bottom: 30px;
                 font-size: 4.5rem;
             }
 

@@ -52,7 +52,7 @@ gsap.to(listEl, {
       const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
 
       return window.innerWidth <= 500
-        ? `+=${distance * 0.7}`
+        ? `+=${distance * 0.8}`
         : `+=${distance}`;
     },
     scrub: true,
