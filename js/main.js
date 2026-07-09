@@ -40,7 +40,30 @@ sections.forEach((section, index) => {
 const listWrapperEl = document.querySelector(".side-scroll-list-wrapper");
 const listEl = document.querySelector(".side-scroll-list");
 
-gsap.to(listEl, {
+// gsap.to(listEl, {
+//   x: () => {
+//     const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
+//     return -distance;
+//   },
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: listWrapperEl,
+//     start: "top top",
+//     end: () => {
+//       const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
+
+//       return window.innerWidth <= 500
+//         ? `+=${distance * 0.8}`
+//         : `+=${distance}`;
+//     },
+//     scrub: true,
+//     pin: true,
+//     anticipatePin: 1,
+//     invalidateOnRefresh: true,
+//   },
+// });
+
+const horizontalTween = gsap.to(listEl, {
   x: () => {
     const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
     return -distance;
@@ -64,44 +87,6 @@ gsap.to(listEl, {
 });
 
 
-// テキストアニメーション
-// gsap.utils.toArray(".js-ttl").forEach((title) => {
-//   gsap.from(title.querySelectorAll(":scope > span > span"), {
-//     yPercent: 100,
-//     opacity: 0,
-//     duration: 0.8,
-//     ease: "power3.out",
-//     stagger: 0.15,
-//     scrollTrigger: {
-//       trigger: title,
-//       start: "top 80%",
-//       toggleActions: "play none none none"
-//     }
-//   });
-// });
-
-gsap.utils.toArray(".js-ttl").forEach((title) => {
-
-  const chars = title.querySelectorAll(":scope > span > span");
-
-  gsap.from(chars, {
-    yPercent: 100,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.05,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: title,
-      start: "top 80%"
-    },
-    onComplete: () => {
-      title.classList.add("is-animated");
-    }
-  });
-
-});
-
-
 // アンダーラインのアニメーション
 gsap.utils.toArray(".sub-ttl-left").forEach((title) => {
   ScrollTrigger.create({
@@ -110,6 +95,38 @@ gsap.utils.toArray(".sub-ttl-left").forEach((title) => {
     once: true,
     onEnter: () => {
       title.classList.add("is-active");
+    }
+  });
+});
+
+
+// テキストアニメーション
+gsap.utils.toArray(".js-ttl").forEach((heading) => {
+  gsap.from(heading.querySelectorAll("span"), {
+    scale: 0,
+    duration: 0.4,
+    stagger: 0.1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: heading,
+      start: "top 60%",
+      toggleActions: "play none none none"
+    }
+  });
+});
+
+// 横スクロール時のテキストアニメーション
+gsap.utils.toArray(".js-ttl-side").forEach((heading) => {
+  gsap.from(heading.querySelectorAll("span"), {
+    scale: 0,
+    duration: 0.4,
+    stagger: 0.1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: heading,
+      containerAnimation: horizontalTween,
+      start: "left 70%",
+      toggleActions: "play none none none"
     }
   });
 });

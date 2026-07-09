@@ -10,7 +10,6 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
-    overscroll-behavior: none;
 }
 
 body {
@@ -20,7 +19,6 @@ body {
     font-weight: 400;
     font-feature-settings: "palt";
     background: var(--dark-bg-color);
-    overscroll-behavior: none;
 }
 
 img,
@@ -137,19 +135,6 @@ video {
     }
 }
 
-.js-ttl>span {
-    overflow: hidden;
-    display: inline-block;
-}
-
-.js-ttl.is-animated>span {
-    overflow: visible;
-}
-
-.js-ttl>span>span {
-    display: inline-block;
-}
-
 .circle {
     margin-right: 4px;
 
@@ -213,7 +198,7 @@ video {
 
 .arrow {
     width: 1px;
-    height: 20px;
+    height: 22px;
     background: transparent;
     overflow: hidden;
     position: relative;
@@ -261,6 +246,12 @@ video {
 /* スクロールスタック */
 .stack-section {
     position: relative;
+}
+
+/* テキストアニメーション */
+.js-ttl span,
+.js-ttl-side span {
+    display: inline-block;
 }
 
 /* 画像アニメーション */
