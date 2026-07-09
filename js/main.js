@@ -148,3 +148,19 @@ gsap.utils.toArray(".flow-step").forEach((step) => {
     }
   });
 });
+
+
+
+
+
+
+
+gsap.from(".mv-copy > span > span", {
+  y: 30,
+  opacity: 0,
+  filter: "blur(12px)",
+  scale: 1.15,
+  duration: 2.75,
+  ease: "power3.out",
+  stagger: 0.1
+});
