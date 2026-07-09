@@ -140,8 +140,8 @@ video {
     display: inline-block;
 }
 
-.js-ttl.is-animated > span {
-  overflow: visible;
+.js-ttl.is-animated>span {
+    overflow: visible;
 }
 
 .js-ttl>span>span {
@@ -193,13 +193,13 @@ video {
 .btn {
     width: 90px;
     height: 90px;
-    padding-top: 30px;
+    padding-top: 25px;
     border: 1px solid #fff;
     border-radius: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     cursor: pointer;
     transition: all 0.3s;
 
@@ -207,6 +207,42 @@ video {
         color: #1a1a1a;
         background-color: #fff;
     }
+}
+
+.arrow {
+    width: 1px;
+    height: 20px;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+.arrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+
+    animation: lineMove 1.2s ease-in-out infinite;
+}
+
+.btn:hover {
+    color: #1a1a1a;
+}
+
+@keyframes lineMove {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+
 }
 
 /* ブランク */
@@ -223,6 +259,16 @@ video {
 /* スクロールスタック */
 .stack-section {
     position: relative;
+}
+
+/* 画像アニメーション */
+.img-wrap {
+    overflow: hidden;
+}
+
+.img-wrap img {
+    display: block;
+    width: 100%;
 }
 
 /* mainvisual */
@@ -559,8 +605,31 @@ video {
 
     .flow-step {
         margin-bottom: 75px;
+        position: relative;
         align-items: center;
         gap: 35px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height:40%;
+            background: #fff;
+            position: absolute;
+            top: 98%;
+            left: 5%;
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+
+        &.line-active::after {
+            transform: scaleY(1);
+            transition: transform 0.5s 0.5s ease-out;
+        }
 
         .step-num {
             width: 9%;
@@ -592,7 +661,7 @@ video {
                 margin-bottom: 0;
             }
 
-            img {
+            .img-wrap {
                 width: 30%;
             }
         }
@@ -624,6 +693,12 @@ video {
         .flow-step {
             align-items: flex-start;
 
+            &::after {
+            height:80%;
+            top: 20%;
+            left: 7%;
+        }
+
             .step-num {
                 width: 12%;
                 font-size: 3.2rem;
@@ -639,7 +714,7 @@ video {
                     width: 100%;
                 }
 
-                img {
+                .img-wrap {
                     width: 100%;
                 }
             }
