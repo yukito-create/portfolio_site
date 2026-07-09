@@ -312,6 +312,34 @@ video {
             font-size: 10.3vw;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    .mv-copy {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mv-copy>.line>span {
+        display: inline-block;
+        overflow: hidden;
+        padding-bottom: 0.15em;
+        /* gやy対策 */
+    }
+
+    .mv-copy>.line>span>span {
+        display: inline-block;
+        will-change: transform, filter;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -348,29 +376,6 @@ video {
             span {
                 font-size: 4.5rem;
             }
-        }
-
-
-
-
-
-
-
-        .mv-copy {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .mv-copy>span {
-            display: inline-block;
-            overflow: hidden;
-            padding-bottom: 0.15em;
-            /* gやy対策 */
-        }
-
-        .mv-copy>span>span {
-            display: inline-block;
-            will-change: transform, filter;
         }
     }
 }
