@@ -40,29 +40,6 @@ sections.forEach((section, index) => {
 const listWrapperEl = document.querySelector(".side-scroll-list-wrapper");
 const listEl = document.querySelector(".side-scroll-list");
 
-// gsap.to(listEl, {
-//   x: () => {
-//     const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
-//     return -distance;
-//   },
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: listWrapperEl,
-//     start: "top top",
-//     end: () => {
-//       const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
-
-//       return window.innerWidth <= 500
-//         ? `+=${distance * 0.8}`
-//         : `+=${distance}`;
-//     },
-//     scrub: true,
-//     pin: true,
-//     anticipatePin: 1,
-//     invalidateOnRefresh: true,
-//   },
-// });
-
 const horizontalTween = gsap.to(listEl, {
   x: () => {
     const distance = listEl.scrollWidth - listWrapperEl.clientWidth;
@@ -103,7 +80,8 @@ gsap.utils.toArray(".sub-ttl-left").forEach((title) => {
 // テキストアニメーション
 gsap.utils.toArray(".js-ttl").forEach((heading) => {
   gsap.from(heading.querySelectorAll("span"), {
-    scale: 0,
+    opacity: 0,
+    y: 15,
     duration: 0.4,
     stagger: 0.1,
     ease: "power3.out",
@@ -118,7 +96,8 @@ gsap.utils.toArray(".js-ttl").forEach((heading) => {
 // 横スクロール時のテキストアニメーション
 gsap.utils.toArray(".js-ttl-side").forEach((heading) => {
   gsap.from(heading.querySelectorAll("span"), {
-    scale: 0,
+    opacity: 0,
+    y: 15,
     duration: 0.4,
     stagger: 0.1,
     ease: "power3.out",

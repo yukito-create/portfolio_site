@@ -545,10 +545,10 @@ video {
 }
 
 .work-list {
-    padding-left: 35px;
+    padding-left: 30px;
 
     li {
-        margin-bottom: 25px;
+        margin-bottom: 18px;
         display: flex;
         gap: 3px;
     }
