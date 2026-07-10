@@ -7,30 +7,37 @@ window.addEventListener('load', () => {
 
 
 // マウスカーソル
-const dot = document.querySelector(".cursor-dot");
-const ring = document.querySelector(".cursor-ring");
+const hasMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-const xTo = gsap.quickTo(ring, "x", {
-    duration:0.4,
-    ease:"power3"
-});
+if (hasMouse) {
 
-const yTo = gsap.quickTo(ring, "y", {
-    duration:0.4,
-    ease:"power3"
-});
+  const dot = document.querySelector(".cursor-dot");
+  const ring = document.querySelector(".cursor-ring");
 
-window.addEventListener("mousemove", e => {
+  let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  let pos = { x: mouse.x, y: mouse.y };
 
-    gsap.set(dot,{
-        x:e.clientX,
-        y:e.clientY
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+
+    gsap.set(dot, {
+      x: mouse.x,
+      y: mouse.y
     });
+  });
 
-    xTo(e.clientX);
-    yTo(e.clientY);
+  gsap.ticker.add(() => {
+    pos.x += (mouse.x - pos.x) * 0.15;
+    pos.y += (mouse.y - pos.y) * 0.15;
 
-});
+    gsap.set(ring, {
+      x: pos.x,
+      y: pos.y
+    });
+  });
+
+}
 
 
 // ページ内リンク時のハッシュ削除
