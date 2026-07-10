@@ -1,5 +1,11 @@
 'use strict';
 
+// ページ全体の読み込み後にScrollTriggerを再計算
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+});
+
+
 // ページ内リンク時のハッシュ削除
 document.addEventListener("DOMContentLoaded", () => {
   // ページ内リンクを取得
@@ -23,7 +29,7 @@ gsap.from(".mv-copy .word > span > span", {
   scale: 1.15,
   duration: 2.75,
   ease: "power3.out",
-  stagger: 0.1
+  stagger: 0.18
 });
 
 
