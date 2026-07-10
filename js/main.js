@@ -16,6 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// MVのテキストアニメーション
+gsap.from(".mv-copy .word > span > span", {
+  opacity: 0,
+  filter: "blur(12px)",
+  scale: 1.15,
+  duration: 2.75,
+  ease: "power3.out",
+  stagger: 0.1
+});
+
+
 // スクロールスタック
 const sections = gsap.utils.toArray(".stack-section");
 
@@ -93,6 +104,7 @@ gsap.utils.toArray(".js-ttl").forEach((heading) => {
   });
 });
 
+
 // 横スクロール時のテキストアニメーション
 gsap.utils.toArray(".js-ttl-side").forEach((heading) => {
   gsap.from(heading.querySelectorAll("span"), {
@@ -147,30 +159,4 @@ gsap.utils.toArray(".flow-step").forEach((step) => {
       step.classList.add("line-active");
     }
   });
-});
-
-
-
-
-
-
-
-// gsap.from(".mv-copy > span > span", {
-//   y: 30,
-//   opacity: 0,
-//   filter: "blur(12px)",
-//   scale: 1.15,
-//   duration: 2.75,
-//   ease: "power3.out",
-//   stagger: 0.1
-// });
-
-gsap.from(".mv-copy .word > span > span", {
-  // y: 30,
-  opacity: 0,
-  filter: "blur(12px)",
-  scale: 1.15,
-  duration: 2.75,
-  ease: "power3.out",
-  stagger: 0.1
 });

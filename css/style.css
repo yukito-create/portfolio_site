@@ -81,13 +81,11 @@ video {
     margin-bottom: 75px;
     display: flex;
     flex-direction: column;
-    /* position: relative; */
     overflow: visible;
 
     .sub-ttl-en {
         font-size: 7rem;
         font-weight: 800;
-        /* line-height: 1; */
         transform: translateX(-0.06em);
     }
 
@@ -102,7 +100,6 @@ video {
         margin-top: 75px;
         background: #fff;
         display: block;
-
         transform: scaleX(0);
         transform-origin: left center;
         transition: transform 1.5s .3s cubic-bezier(.22, .61, .36, 1);
@@ -299,59 +296,16 @@ video {
         }
     }
 
-    /* .mv-copy {
+    .mv-copy {
         font-weight: 800;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
         position: absolute;
         bottom: 45px;
         left: 50px;
         user-select: none;
-        display: flex;
-        flex-wrap: wrap;
-        
-        .word {
-            span {
-                font-size: 10.3vw;
-                display: inline-block;
-                line-height: 0.9;
-                
-                span {
-                    display: inline-block;
-                    will-change: transform, filter;
-                }
-            }
-        }
-    }
-    
-    .mv-copy {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        
-        .word {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-        
-        >.word>span {
-            display: inline-block;
-
-            >span {
-                display: inline-block;
-                will-change: transform, filter;
-            }
-        }
-    } */
-
-    .mv-copy {
-        font-weight: 800;
-        position: absolute;
-        bottom: 45px;
-        left: 50px;
-        /* user-select: none; */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex-wrap: wrap;
 
         .word {
             display: flex;
@@ -359,9 +313,10 @@ video {
 
             span {
                 font-size: 10.3vw;
-                display: inline-block;
                 vertical-align: text-bottom;
                 line-height: 0.9;
+                display: flex;
+                align-items: flex-end;
 
                 span {
                     display: inline-block;
@@ -409,7 +364,7 @@ video {
             .word {
                 span {
                     font-size: 4.5rem;
-                    
+
                     span {
                         &.l-char {
                             font-size: 6rem;
@@ -500,7 +455,6 @@ video {
             bottom: 0;
             left: 0;
         }
-
     }
 }
 
@@ -661,8 +615,8 @@ video {
         margin-bottom: 50px;
         font-size: 2rem;
         font-weight: 600;
-        line-height: 1.25;
         text-align: center;
+        line-height: 1.25;
     }
 
     .flow-step {
@@ -919,5 +873,4 @@ video {
             }
         }
     }
-
 }
