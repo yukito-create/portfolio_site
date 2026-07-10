@@ -433,6 +433,7 @@ video {
 
 /* start */
 #start {
+    height: 100vh;
     z-index: 1;
 }
 
@@ -492,6 +493,7 @@ video {
 
 /* learn */
 #learn {
+    height: 100vh;
     background-color: var(--dark-bg-color);
     z-index: 2;
 }
