@@ -6,6 +6,33 @@ window.addEventListener('load', () => {
 });
 
 
+// マウスカーソル
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
+
+const xTo = gsap.quickTo(ring, "x", {
+    duration:0.4,
+    ease:"power3"
+});
+
+const yTo = gsap.quickTo(ring, "y", {
+    duration:0.4,
+    ease:"power3"
+});
+
+window.addEventListener("mousemove", e => {
+
+    gsap.set(dot,{
+        x:e.clientX,
+        y:e.clientY
+    });
+
+    xTo(e.clientX);
+    yTo(e.clientY);
+
+});
+
+
 // ページ内リンク時のハッシュ削除
 document.addEventListener("DOMContentLoaded", () => {
   // ページ内リンクを取得

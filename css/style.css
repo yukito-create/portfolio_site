@@ -19,6 +19,7 @@ body {
     font-weight: 400;
     font-feature-settings: "palt";
     background: var(--dark-bg-color);
+    cursor: none;
 }
 
 img,
@@ -259,6 +260,29 @@ video {
 .img-wrap img {
     display: block;
     width: 100%;
+}
+
+/* マウスカーソル */
+.cursor-dot{
+    position:fixed;
+    width:12px;
+    height:12px;
+    background:#dd2849;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+}
+
+.cursor-ring{
+    position:fixed;
+    width:36px;
+    height:36px;
+    border:2px solid #dd2849;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9998;
+    transform:translate(-50%,-50%);
 }
 
 /* mainvisual */
