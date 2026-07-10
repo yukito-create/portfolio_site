@@ -299,46 +299,80 @@ video {
         }
     }
 
-    p {
-        font-size: 13vw;
+    /* .mv-copy {
         font-weight: 800;
-        line-height: 0.9;
         position: absolute;
         bottom: 45px;
         left: 50px;
         user-select: none;
-
-        span {
-            font-size: 10.3vw;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    .mv-copy {
         display: flex;
         flex-wrap: wrap;
+        
+        .word {
+            span {
+                font-size: 10.3vw;
+                display: inline-block;
+                line-height: 0.9;
+                
+                span {
+                    display: inline-block;
+                    will-change: transform, filter;
+                }
+            }
+        }
     }
+    
+    .mv-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .word {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        
+        >.word>span {
+            display: inline-block;
 
-    .mv-copy>.line>span {
-        display: inline-block;
-        overflow: hidden;
-        padding-bottom: 0.15em;
-        /* gやy対策 */
-    }
+            >span {
+                display: inline-block;
+                will-change: transform, filter;
+            }
+        }
+    } */
 
-    .mv-copy>.line>span>span {
-        display: inline-block;
-        will-change: transform, filter;
+    .mv-copy {
+        font-weight: 800;
+        position: absolute;
+        bottom: 45px;
+        left: 50px;
+        /* user-select: none; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        .word {
+            display: flex;
+            flex-wrap: nowrap;
+
+            span {
+                font-size: 10.3vw;
+                display: inline-block;
+                vertical-align: text-bottom;
+                line-height: 0.9;
+
+                span {
+                    display: inline-block;
+                    will-change: transform, filter;
+
+                    &.l-char {
+                        font-size: 13vw;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -365,16 +399,23 @@ video {
             }
         }
 
-        p {
-            font-size: 6rem;
+        .mv-copy {
             top: 50%;
             bottom: auto;
             left: auto;
             right: 15px;
             transform: translateY(-50%);
 
-            span {
-                font-size: 4.5rem;
+            .word {
+                span {
+                    font-size: 4.5rem;
+                    
+                    span {
+                        &.l-char {
+                            font-size: 6rem;
+                        }
+                    }
+                }
             }
         }
     }
