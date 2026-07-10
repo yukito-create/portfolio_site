@@ -886,7 +886,7 @@ video {
 
 /* profile */
 #profile {
-    height: 100vh;
+    height: 100svh;
 
     .container {
         padding-top: 125px;
