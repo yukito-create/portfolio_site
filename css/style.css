@@ -230,12 +230,18 @@ video {
 
 }
 
-/* ブランク */
+/* 改行 */
+.pc-br {
+    display: block;
+}
 .sp-br {
     display: none;
 }
 
 @media screen and (max-width: 500px) {
+    .pc-br {
+        display: none;
+    }
     .sp-br {
         display: block;
     }
@@ -283,6 +289,17 @@ video {
     pointer-events:none;
     z-index:9998;
     transform:translate(-50%,-50%);
+}
+
+.cursor-dot,
+.cursor-ring {
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.cursor-dot.is-visible,
+.cursor-ring.is-visible {
+    opacity: 1;
 }
 
 @media (hover: hover) and (pointer: fine) {

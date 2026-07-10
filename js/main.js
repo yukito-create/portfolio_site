@@ -10,12 +10,22 @@ window.addEventListener('load', () => {
 const hasMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 if (hasMouse) {
-
   const dot = document.querySelector(".cursor-dot");
   const ring = document.querySelector(".cursor-ring");
 
-  let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-  let pos = { x: mouse.x, y: mouse.y };
+  let mouse = {
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2
+  };
+
+  let pos = {
+    x: mouse.x,
+    y: mouse.y
+  };
+
+  gsap.set([dot, ring], {
+    autoAlpha: 0
+  });
 
   window.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
@@ -37,6 +47,32 @@ if (hasMouse) {
     });
   });
 
+  // ウィンドウに入ったとき
+  document.addEventListener("pointerenter", () => {
+    gsap.to([dot, ring], {
+      autoAlpha: 1,
+      duration: 0.2,
+      overwrite: "auto"
+    });
+  });
+
+  // ウィンドウから出たとき
+  document.addEventListener("pointerleave", () => {
+    gsap.to([dot, ring], {
+      autoAlpha: 0,
+      duration: 0.2,
+      overwrite: "auto"
+    });
+  });
+
+  // タブ切り替え
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      gsap.set([dot, ring], {
+        autoAlpha: 0
+      });
+    }
+  });
 }
 
 
