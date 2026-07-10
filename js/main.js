@@ -107,7 +107,6 @@ gsap.from(".mv-copy .word > span > span", {
 const sections = gsap.utils.toArray(".stack-section");
 
 sections.forEach((section, index) => {
-
     // 最後のセクションは固定しない
     if(index === sections.length - 1) return;
 
