@@ -251,14 +251,14 @@ video {
 }
 
 /* 画像アニメーション */
-.img-wrap {
+/* .img-wrap {
     overflow: hidden;
 }
 
 .img-wrap img {
     display: block;
     width: 100%;
-}
+} */
 
 /* マウスカーソル */
 .cursor-dot{

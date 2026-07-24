@@ -199,29 +199,29 @@ gsap.utils.toArray(".js-ttl-side").forEach((heading) => {
 
 
 // 画像アニメーション
-gsap.utils.toArray(".img-wrap").forEach((wrap) => {
-  const img = wrap.querySelector("img");
+// gsap.utils.toArray(".img-wrap").forEach((wrap) => {
+//   const img = wrap.querySelector("img");
 
-  gsap.fromTo(
-    img,
-    {
-      scale: 0,
-      opacity: 0
-    },
-    {
-      scale: 1,
-      opacity: 1,
-      duration: 1.5,
-      delay: 0.1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: wrap,
-        start: "top 65%",
-        toggleActions: "play none none none"
-      }
-    }
-  );
-});
+//   gsap.fromTo(
+//     img,
+//     {
+//       scale: 0,
+//       opacity: 0
+//     },
+//     {
+//       scale: 1,
+//       opacity: 1,
+//       duration: 1.5,
+//       delay: 0.1,
+//       ease: "power3.out",
+//       scrollTrigger: {
+//         trigger: wrap,
+//         start: "top 65%",
+//         toggleActions: "play none none none"
+//       }
+//     }
+//   );
+// });
 
 
 // flowのラインの動き
