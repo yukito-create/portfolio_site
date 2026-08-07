@@ -97,9 +97,9 @@ gsap.from(".mv-copy .word > span > span", {
   opacity: 0,
   filter: "blur(12px)",
   scale: 1.15,
-  duration: 2.75,
+  duration: 1.8,
   ease: "power3.out",
-  stagger: 0.18
+  stagger: 0.16
 });
 
 
